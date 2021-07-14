@@ -134,7 +134,8 @@ for row in number_grid:
 
 #try/except
 try:
-    mynum = int(input("Enter a number: "))
+    #mynum = int(input("Enter a number: "))
+    mynum = 20
     print(mynum)
 #zerodivision error with specific error thrown
 except ZeroDivisionError as err:
@@ -146,3 +147,43 @@ except ValueError as err:
 except:
     print("general catch")
 
+#reading from a file
+# open("readfrom.txt", "r") #read only
+# open("readfrom.txt", "w") #write only
+# open("readfrom.txt", "a") #append
+# open("readfrom.txt"), "r+") #read and write
+#
+# office_file = open("readfrom1.txt", "a") #opening a non-existent file creates it
+# office_file.write("\nKelly:customer service")
+# office_file.close()
+# office_file = open("readfrom1.txt", "r")
+#
+# if(office_file.readable()):
+#     print(office_file.read()) #read whole file
+
+#  print(office_file.readlines()[1]) #readlines, array index 1
+#  print(office_file.readline()) #read a single line
+
+# office_file.close()
+
+#modules fun
+from Hello_world import hello_world
+hello_world()
+
+#import Student only from Hello_world
+from Hello_world import Student
+
+student1 = Student("jim", "business", 3.1, True)
+
+print(student1.gpa)
+print(student1.on_honor_roll())
+
+from Hello_world import Chef
+from specialChef import specialChef
+mychef = Chef()
+mychef.make_salad()
+
+#inherited special chef class extended from chef
+myspecialchef = specialChef()
+myspecialchef.make_salad()
+myspecialchef.make_special()
