@@ -69,3 +69,80 @@ elif is_cool and not is_nice:
     print("bad job")
 else:
     print("YOU FAIL")
+
+#dictionary/switches, while loop
+monthConvert = {
+    "Jan": "January",
+    "Feb": "February",
+    "Mar": "March",
+    "Apr": "April",
+    "May": "May",
+    "Jun": "June",
+    "Jul": "July",
+    "Aug": "August",
+    "Sep": "September",
+    "Oct": "October",
+    "Nov": "November",
+    "Dec": "December"
+}
+
+print(monthConvert["Jan"])
+print(monthConvert.get("not me", "INVALID"))
+
+def number_switch(mynum):
+    switcher = {
+        1: "one",
+        2: "two",
+        3: "three",
+        4: "four",
+        5: "five"
+    }
+    return switcher.get(mynum, "out of bounds")
+i = 1
+while i < 6:
+    print(number_switch(i))
+    print(i)
+    i += 1
+
+#for loops
+for letter in "my sentence":
+    print(letter)
+
+food = ["rice", "beans", "salad"]
+for each in food:
+    print(each)
+
+for index in range(len(food)):
+    print(food[index])
+
+#2-d lists and nested for loops
+number_grid = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [0]
+]
+
+#print row 0, column 2
+print(number_grid[0][2])
+
+for row in number_grid:
+    print(row)
+for row in number_grid:
+    for column in row:
+        print(column)
+
+#try/except
+try:
+    mynum = int(input("Enter a number: "))
+    print(mynum)
+#zerodivision error with specific error thrown
+except ZeroDivisionError as err:
+    print(err)
+#ValueError with specific error thrown
+except ValueError as err:
+    print(err)
+#general catch block that is too broad - not typically used
+except:
+    print("general catch")
+
