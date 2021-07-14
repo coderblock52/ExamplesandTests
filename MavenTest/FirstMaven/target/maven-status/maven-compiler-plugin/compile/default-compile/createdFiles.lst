@@ -1,0 +1,5 @@
+com/bren/FirstMaven/api/Saying.class
+com/bren/health/TemplateHealthCheck.class
+com/bren/resources/FirstMavenResource.class
+com/bren/FirstMavenConfiguration.class
+com/bren/FirstMavenApplication.class

@@ -1,0 +1,7 @@
+template: result is %s!
+#defaultName: Hello, my name is Stranger!
+
+logging:
+  level: INFO
+  loggers:
+    com.bren: DEBUG
