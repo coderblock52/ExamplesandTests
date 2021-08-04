@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="FirstMaven" target="1.8" />
+      <module name="FirstMaven" target="1.5" />
       <module name="FirstMaven (1)" target="1.8" />
       <module name="FirstMaven (2)" target="1.8" />
     </bytecodeTargetLevel>

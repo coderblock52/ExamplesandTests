@@ -10,12 +10,16 @@ public class User implements Principal {
 
     public User(String name) {
         this.name = name;
+        System.out.println("new user is: " + this.name);
         this.roles = null;
+        System.out.println("new role for this user is: " + this.roles);
     }
 
     public User(String name, Set<String> roles) {
         this.name = name;
+        System.out.println("new user is: " + this.name);
         this.roles = roles;
+        System.out.println("new role for this user is: " + this.roles);
     }
 
     public String getName() {

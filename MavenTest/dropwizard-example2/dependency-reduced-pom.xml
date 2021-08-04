@@ -169,25 +169,9 @@
   </profiles>
   <dependencies>
     <dependency>
-      <groupId>io.dropwizard</groupId>
-      <artifactId>dropwizard-testing</artifactId>
-      <version>2.0.23</version>
-      <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>junit</artifactId>
-          <groupId>junit</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>jersey-test-framework-core</artifactId>
-          <groupId>org.glassfish.jersey.test-framework</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
-      <version>5.8.0-M1</version>
+      <version>5.7.2</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>
@@ -266,54 +250,6 @@
       <version>3.20.2</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.glassfish.jersey.test-framework.providers</groupId>
-      <artifactId>jersey-test-framework-provider-inmemory</artifactId>
-      <version>2.33</version>
-      <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>javax.servlet-api</artifactId>
-          <groupId>javax.servlet</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>junit</artifactId>
-          <groupId>junit</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>jersey-test-framework-core</artifactId>
-          <groupId>org.glassfish.jersey.test-framework</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.glassfish.jersey.test-framework.providers</groupId>
-      <artifactId>jersey-test-framework-provider-grizzly2</artifactId>
-      <version>3.0.2</version>
-      <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>javax.servlet-api</artifactId>
-          <groupId>javax.servlet</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>junit</artifactId>
-          <groupId>junit</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>jersey-container-grizzly2-http</artifactId>
-          <groupId>org.glassfish.jersey.containers</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>jersey-container-grizzly2-servlet</artifactId>
-          <groupId>org.glassfish.jersey.containers</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>jersey-test-framework-core</artifactId>
-          <groupId>org.glassfish.jersey.test-framework</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
   </dependencies>
   <dependencyManagement>
     <dependencies>
@@ -334,7 +270,7 @@
       <dependency>
         <groupId>net.java.dev.jna</groupId>
         <artifactId>jna</artifactId>
-        <version>5.8.0</version>
+        <version>5.3.1</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

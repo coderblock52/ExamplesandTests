@@ -1,9 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.example.helloworld.resources.ProtectedClassResourceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.003 s <<< FAILURE! - in com.example.helloworld.resources.ProtectedClassResourceTest
-com.example.helloworld.resources.ProtectedClassResourceTest  Time elapsed: 0.003 s  <<< ERROR!
-java.lang.Exception: java.lang.NoClassDefFoundError: jakarta/ws/rs/ProcessingException
-Caused by: java.lang.NoClassDefFoundError: jakarta/ws/rs/ProcessingException
-Caused by: java.lang.ClassNotFoundException: jakarta.ws.rs.ProcessingException
-
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.445 s - in com.example.helloworld.resources.ProtectedClassResourceTest

@@ -9,12 +9,7 @@ import com.example.helloworld.core.User;
 import com.example.helloworld.db.PersonDAO;
 import com.example.helloworld.filter.DateRequiredFeature;
 import com.example.helloworld.health.TemplateHealthCheck;
-import com.example.helloworld.resources.FilteredResource;
-import com.example.helloworld.resources.HelloWorldResource;
-import com.example.helloworld.resources.PeopleResource;
-import com.example.helloworld.resources.PersonResource;
-import com.example.helloworld.resources.ProtectedResource;
-import com.example.helloworld.resources.ViewResource;
+import com.example.helloworld.resources.*;
 import com.example.helloworld.tasks.EchoTask;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
@@ -32,6 +27,9 @@ import io.dropwizard.views.ViewBundle;
 import org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature;
 
 import java.util.Map;
+
+import io.dropwizard.testing.junit5.ResourceExtension;
+import org.glassfish.jersey.test.grizzly.GrizzlyWebTestContainerFactory;
 
 public class HelloWorldApplication extends Application<HelloWorldConfiguration> {
     public static void main(String[] args) throws Exception {
@@ -99,5 +97,24 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
         environment.jersey().register(new PeopleResource(dao));
         environment.jersey().register(new PersonResource(dao));
         environment.jersey().register(new FilteredResource());
+//        environment.jersey().getProperty(new ProtectedResource().showAdminSecret());
+
+
+        BasicCredentialAuthFilter<User> BASIC_AUTH_HANDLER =
+                new BasicCredentialAuthFilter.Builder<User>()
+                        .setAuthenticator(new ExampleAuthenticator())
+                        .setAuthorizer(new ExampleAuthorizer())
+                        .setPrefix("Basic")
+                        .setRealm("SUPER SECRET STUFF")
+                        .buildAuthFilter();
+
+        ResourceExtension RULE = ResourceExtension.builder()
+                .addProvider(RolesAllowedDynamicFeature.class)
+                .addProvider(new AuthDynamicFeature(BASIC_AUTH_HANDLER))
+                .addProvider(new AuthValueFactoryProvider.Binder<>(User.class))
+                .setTestContainerFactory(new GrizzlyWebTestContainerFactory())
+                .addProvider(ProtectedClassResource.class)
+                .build();
+
     }
 }

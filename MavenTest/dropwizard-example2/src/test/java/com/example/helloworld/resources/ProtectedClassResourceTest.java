@@ -12,6 +12,7 @@ import org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature;
 import org.glassfish.jersey.test.grizzly.GrizzlyWebTestContainerFactory;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.hibernate.validator.internal.util.logging.Log_$logger;
 
 import javax.ws.rs.ForbiddenException;
 import javax.ws.rs.core.HttpHeaders;
