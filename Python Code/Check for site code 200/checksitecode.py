@@ -22,6 +22,8 @@ sender_email = email
 
 receiver_email = input("Type the receiver password: ")
 
+website = input("Type the website to monitor: ")
+
  
 
 message = MIMEMultipart("alternative")
@@ -88,7 +90,7 @@ with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
 
                while i:
 
-                              response = urllib.request.urlopen(https://meters.pacificoffice.com/)
+                              response = urllib.request.urlopen(website)
 
                               status_code = response.getcode()
 
